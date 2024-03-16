@@ -203,7 +203,6 @@ export default function FormV2(){
 
     const handleSubmit = (event) =>{
         event.preventDefault()
-        console.log(values)
      
         
     }
