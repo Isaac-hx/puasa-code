@@ -1,8 +1,16 @@
 import {FaClock,FaUtensils,FaHome,FaWallet,FaMoneyBillWaveAlt} from 'react-icons/fa'
+import { useState } from 'react'
+
+
 const urlImg = 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
 
 import NavbarLink from './utils/NavbarLink'
 export default function Navbar(){
+    const [selected,setSelected] = useState(null)
+
+    const handleSelected = (textlink) =>{
+        setSelected(textlink)
+    }
 
 
     return(
@@ -23,19 +31,19 @@ export default function Navbar(){
 
            {/* Logo & Menu */}
            <section className='flex flex-col mt-14 gap-5'>
-                <NavbarLink textlink={`Home`}>
+                <NavbarLink selected={selected} handleSelected={handleSelected} textlink={`Home`}>
                     <FaHome className={`text-2xl   mx-auto`}/>
                 </NavbarLink>
-                <NavbarLink textlink={`Menu`}>
+                <NavbarLink selected={selected} handleSelected={handleSelected} textlink={`Menu`}>
                     <FaUtensils className={`text-2xl   mx-auto`}/>
                 </NavbarLink>
-                <NavbarLink textlink={`History`}>
+                <NavbarLink selected={selected} handleSelected={handleSelected} textlink={`History`}>
                     <FaClock className={`text-2xl  mx-auto`}/>
                 </NavbarLink>
-                <NavbarLink textlink={`Promo`}>
+                <NavbarLink selected={selected} handleSelected={handleSelected} textlink={`Promo`}>
                     <FaMoneyBillWaveAlt className={`text-2xl   mx-auto`}/>
                 </NavbarLink>
-                <NavbarLink textlink={`Wallet`}>
+                <NavbarLink selected={selected} handleSelected={handleSelected} textlink={`Wallet`}>
                     <FaWallet className={`text-2xl mx-auto`}/>
                 </NavbarLink>
            </section>
