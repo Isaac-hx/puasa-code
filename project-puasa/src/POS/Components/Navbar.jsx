@@ -1,10 +1,8 @@
 import {FaClock,FaUtensils,FaHome,FaWallet,FaMoneyBillWaveAlt} from 'react-icons/fa'
 import { useState } from 'react'
 
-
-const urlImg = 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-
 import NavbarLink from './utils/NavbarLink'
+import Profile from './utils/Profile'
 export default function Navbar(){
     const [selected,setSelected] = useState(null)
 
@@ -14,18 +12,10 @@ export default function Navbar(){
 
 
     return(
-        <nav className={`fixed top-0 left-0 w-28 h-screen bg-gray-800 flex flex-col p-2`}>
+        <nav className={`w-28 h-screen bg-gray-800 flex flex-col p-2`}>
             {/* Section Profile */}
            <section className={`flex  gap-1 items-center  mt-4 `}>
-                <div className={`w-8 h-8 rounded-full overflow-hidden border-2 border-slate-400 shrink-0`}>
-
-                    <img className={`w-full object-cover`} src={urlImg}/>
-                </div>
-                <div>
-                    <h2 className={`font-semibold text-sm  text-white line-clamp-1`}>Dimas</h2>
-                    <p className={` text-xs text-white/60`}>Cashier</p>
-
-                </div>
+                <Profile/>
            </section>
            {/* End Section Profile */}
 
